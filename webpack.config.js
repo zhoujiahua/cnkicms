@@ -11,6 +11,14 @@ module.exports = {
     path: path.join(__dirname, './dist'), // 输出路径
     filename: 'bundle.js' // 指定输出文件的名称
   },
+  devServer:{
+    // packge.json配置方法（"dev": "webpack-dev-server --open --port 3000 --hot"）
+    contentBase:path.join(__dirname,"./dist"),
+    compress:true,
+    port:"3000",
+    host:"192.168.1.168"
+  }
+  ,
   plugins: [ // 所有webpack  插件的配置节点
     new htmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'), // 指定模板文件路径
