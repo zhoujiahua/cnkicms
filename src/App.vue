@@ -17,11 +17,15 @@
           <span class="mui-icon mui-icon-home"></span>
           <span class="mui-tab-label">首页</span>
         </router-link>
-        <router-link class="mui-tab-item" to="/shopcar">
-          <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
+        <router-link class="mui-tab-item" to="/news">
+          <span class="mui-icon mui-icon-extra mui-icon-extra-new">
             <span class="mui-badge">0</span>
           </span>
-          <span class="mui-tab-label">购物车</span>
+          <span class="mui-tab-label">新闻</span>
+        </router-link>
+        <router-link class="mui-tab-item" to="/classify">
+          <span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+          <span class="mui-tab-label">板块</span>
         </router-link>
         <router-link class="mui-tab-item" to="/search">
           <span class="mui-icon mui-icon-search"></span>
@@ -29,7 +33,7 @@
         </router-link>
         <router-link class="mui-tab-item" to="member">
           <span class="mui-icon mui-icon-contact"></span>
-          <span class="mui-tab-label">会员</span>
+          <span class="mui-tab-label">个人</span>
         </router-link>
       </nav>
     </footer>

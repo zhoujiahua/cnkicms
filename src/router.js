@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 
 //导入对应路由组件
 import HomeContainer from "./components/tabbar/HomeContainer.vue";
-import ShopcarContainer from "./components/tabbar/ShopcarContainer.vue";
+import NewsContainer from "./components/tabbar/NewsContainer.vue";
+import ClassifyContainer from "./components/tabbar/ClassifyContainer.vue";
 import MemberContainer from "./components/tabbar/MemberContainer.vue";
 import SearchContainer from "./components/tabbar/SearchContainer.vue";
 
@@ -13,7 +14,8 @@ var router = new VueRouter({
     //配置路由规则
     {path:"/",redirect:"/home"},
     {path:"/home",component:HomeContainer},
-    {path:"/shopcar",component:ShopcarContainer},
+    {path:"/news",component:NewsContainer},
+    {path:"/classify",component:ClassifyContainer},
     {path:"/search",component:SearchContainer},
     {path:"/member",component:MemberContainer}
   ],

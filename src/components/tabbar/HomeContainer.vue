@@ -2,12 +2,26 @@
   <div class="home">
     <div class="home-container">
       <mt-swipe :auto="4000">
-        <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
-           <img :src="item.url" :alt="item.title">
+        <mt-swipe-item v-for="item in lunbotuList" :key="item.id">
+           <img :src="item.link" :alt="item.title">
         </mt-swipe-item>
       </mt-swipe>
     </div>
-    <h1>HomeContainer</h1>
+    <div class="home-list">
+        <div class="mui-card">
+            <div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(../images/cbd.jpg)"></div>
+            <div class="mui-card-content">
+                <div class="mui-card-content-inner">
+                    <p>Posted on January 18, 2016</p>
+                    <p style="color: #333;">这里显示文章摘要，让读者对文章内容有个粗略的概念...</p>
+                </div>
+            </div>
+            <div class="mui-card-footer">
+                <a class="mui-card-link">Like</a>
+                <a class="mui-card-link">Read more</a>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -15,24 +29,7 @@
 export default {
     data(){
         return {
-            lunbotuList:[
-                {
-                    "title":"中国知网陕西分公司",
-                    "url":"http://piccache.cnki.net/kdn/index/kns7/nimages/temp/lb08.jpg"
-                },
-                {
-                    "title":"中国知网陕西分公司",
-                    "url":"http://piccache.cnki.net/kdn/index/kns7/nimages/temp/lb03.jpg"
-                },
-                {
-                    "title":"中国知网陕西分公司",
-                    "url":"http://piccache.cnki.net/kdn/index/kns7/nimages/temp/lb06.jpg"
-                },
-                {
-                    "title":"中国知网陕西分公司",
-                    "url":"http://piccache.cnki.net/kdn/index/kns7/nimages/temp/lb01.jpg"
-                }
-            ]
+            lunbotuList:[]
         }
     },
     created(){
@@ -41,9 +38,9 @@ export default {
     methods:{
         getLunbotu(){
             //获取图片数据
-            this.$http.get("http://s.jiahua.pro/cnki/image/lunbutu/cnki_images.json").then((res) => {
-                // this.lunbotuList = res;
-                // console.log(res)
+            this.$http.get("http://192.168.1.168:12306/api/getImg").then((res) => {
+                this.lunbotuList = res.body.message;
+                console.log(res.body.message)
             },(err) => {
                 console.log(err)
             });

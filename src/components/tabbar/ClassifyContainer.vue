@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>ShopcarContainer</h1>
+        <h1>ClassifyContainer</h1>
     </div>
 </template>
 
