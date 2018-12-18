@@ -9,7 +9,7 @@ module.exports = {
   entry: path.join(__dirname, './src/main.js'), // 入口文件
   output: { // 指定输出选项
     path: path.join(__dirname, './dist'), // 输出路径
-    filename: 'bundle.js' // 指定输出文件的名称
+    filename: '[name].js' // 指定输出文件的名称
   },
   devServer:{
     // packge.json配置方法（"dev": "webpack-dev-server --open --port 3000 --hot"）

@@ -1,17 +1,19 @@
 <template>
   <div class="wrapper">
     <!-- header -->
-    <header class="header">
+    <div class="header">
       <mt-header fixed title="同方知网移动端项目"></mt-header>
-    </header>
+    </div>
 
     <!-- router-view -->
-    <main class="main">
-      <router-view></router-view>
-    </main>
+    <div class="main">
+      <transition name="slider">
+        <router-view></router-view>
+      </transition>
+    </div>
 
     <!-- tabbar -->
-    <footer class="footer">
+    <div class="footer">
       <nav class="mui-bar mui-bar-tab">
         <router-link class="mui-tab-item" to="/home">
           <span class="mui-icon mui-icon-home"></span>
@@ -27,16 +29,18 @@
           <span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
           <span class="mui-tab-label">板块</span>
         </router-link>
-        <router-link class="mui-tab-item" to="/search">
-          <span class="mui-icon mui-icon-search"></span>
-          <span class="mui-tab-label">检索</span>
+        <router-link class="mui-tab-item" to="/video">
+          <span class="mui-icon mui-icon-videocam"></span>
+          <span class="mui-tab-label">视频</span>
         </router-link>
-        <router-link class="mui-tab-item" to="member">
-          <span class="mui-icon mui-icon-contact"></span>
-          <span class="mui-tab-label">个人</span>
+        <router-link class="mui-tab-item" to="/book">
+          <span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo"></span>
+          <span class="mui-tab-label">阅读</span>
         </router-link>
+        
+        
       </nav>
-    </footer>
+    </div>
   </div>
 </template>
 
@@ -45,7 +49,23 @@
 
 
 <style lang="scss" scoped>
-.header {
+.wrapper {
   padding-top: 40px;
+  padding-bottom: 50px;
+}
+.main{
+  overflow-x: hidden;
+}
+.slider-enter{
+  opacity: 0;
+  transform: translateX(100%);
+}
+.slider-leave-to{
+  opacity: 0;
+  transform: translateX(-100%);
+  position:absolute;
+}
+.slider-enter-active,.slider-leave-active{
+  transition: all 0.5s ease;
 }
 </style>

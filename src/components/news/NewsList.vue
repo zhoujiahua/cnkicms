@@ -6,13 +6,13 @@
     <div class="mui-card">
       <ul class="mui-table-view">
         <li class="mui-table-view-cell mui-media" v-for="item in newsList" :key="item.ID">
-          <router-link :to="'/home/newsinfo/'+ item.ID">
+          <a href="javascript:;">
             <img class="mui-media-object mui-pull-right" src="../../images/list1.jpg">
             <div class="mui-media-body">
                 {{ item.Title }}
               <p class="mui-ellipsis">{{ item.Description }}</p>
             </div>
-          </router-link>
+          </a>
         </li>
       </ul>
     </div>
